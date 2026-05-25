@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FRESCO — sempre fortissimo, e con strepito</title>
+<meta name="description" content="FRESCO CFD — combustion modeling you can trust. Coming soon.">
+<style>
+  :root{
+    --azure:#0a9bff; --azure-light:#5cc6ff; --accent:#a6dcff;
+    --ink:#f2f4f7; --muted:#7d8794;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    background:radial-gradient(120% 120% at 50% 38%,#282b2f 0%,#1a1c1f 58%,#0e1013 100%);
+    color:var(--ink);
+    min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;overflow:hidden;position:relative;
+  }
+  .stage{display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;
+    animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both;}
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+
+  .flame-wrap{position:relative;width:clamp(120px,18vw,180px);height:clamp(120px,18vw,180px);
+    display:flex;align-items:center;justify-content:center;margin-bottom:.6rem;}
+  .halo{position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:linear-gradient(to bottom,
+      rgba(10,143,255,0) 0%,
+      rgba(10,143,255,0) 30%,
+      rgba(10,143,255,.26) 47%,
+      rgba(10,143,255,.17) 70%,
+      rgba(10,143,255,.12) 100%);
+    animation:breathe 7s ease-in-out infinite;}
+  @keyframes breathe{0%,100%{opacity:.85;}50%{opacity:1;}}
+  .flame{width:78%;height:78%;filter:drop-shadow(0 0 10px rgba(10,143,255,.45));position:relative;}
+
+  .wordmark{
+    font-weight:800;font-style:italic;
+    font-size:clamp(2.6rem,8vw,5rem);letter-spacing:.04em;
+    color:var(--ink);line-height:1;margin-top:.2rem;
+  }
+  .motto{
+    font-family:Georgia,"Times New Roman",serif;font-style:italic;
+    font-size:clamp(1rem,2.6vw,1.6rem);color:var(--accent);
+    margin-top:1rem;letter-spacing:.01em;
+  }
+  .divider{width:60px;height:1px;background:var(--accent);opacity:.5;margin:1.8rem auto 0;}
+  .status{
+    margin-top:1.1rem;font-size:.82rem;letter-spacing:.1em;
+    color:var(--muted);font-weight:500;
+  }
+
+  footer{
+    position:absolute;bottom:1.4rem;left:0;right:0;
+    font-size:.68rem;letter-spacing:.06em;color:#565d66;
+  }
+  footer a{color:#6b7682;text-decoration:none;}
+</style>
+</head>
+<body>
+  <div class="halo" aria-hidden="true"></div>
+  <main class="stage">
+    <div class="flame-wrap">
+      <svg class="flame" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-label="FRESCO flame">
+        <path fill="#0a9bff" d="m 76.328176,209.47472 -54.916308,-75.88453 27.404541,6.89966 0.172948,-87.611781 37.143617,48.173201 19.578136,-46.351066 20.0648,48.823716 25.38257,-44.15179 3.98905,70.58887 77.17993,-94.638643 -45.23122,120.442483 37.02841,-18.63918 -30.8084,74.72798 -39.63792,0.39054 11.20728,-41.6133 -25.41799,23.66704 -0.40728,-49.16292 -18.32279,26.80975 -11.99342,-40.32453 -10.864942,53.2736 -30.037534,-38.72725 z"/>
+        <path fill="#5cc6ff" d="m 84.339408,203.78215 -47.996173,-66.32214 23.951228,6.03021 0.151157,-76.571602 32.463065,42.102772 17.111045,-40.510264 17.53639,42.671334 22.18405,-38.588124 3.48638,61.693804 67.45432,-82.713011 -39.53154,105.265241 32.36237,-16.2904 -26.92616,65.31132 -34.64305,0.34133 9.79501,-36.36951 -22.215,20.68471 -0.35596,-42.96779 -16.01388,23.4314 -10.48211,-35.24315 -9.49582,46.56046 -26.252434,-33.84714 z"/>
+      </svg>
+    </div>
+
+    <div class="wordmark">FRESCO</div>
+    <div class="motto">sempre fortissimo, e con strepito</div>
+
+    <div class="divider"></div>
+    <div class="status">Come back soon for updates</div>
+  </main>
+
+  <footer>&copy; Federico Perini · 2010–2026 · All rights reserved.</footer>
+</body>
+</html>
